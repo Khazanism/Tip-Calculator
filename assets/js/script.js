@@ -4,13 +4,12 @@
 
 const sliders = document.querySelectorAll("input[type='range']");
 
-sliders.forEach(function(sliders){
+sliders.forEach(function (sliders) {
   sliders.addEventListener("input", calculateTip);
 });
 
 const billInput = document.getElementById("bill");
 billInput.addEventListener("change", calculateTip);
-// console.log(billInput);
 
 // Get input values
 
@@ -20,5 +19,33 @@ function calculateTip() {
   let noOfPeople = document.getElementById("no-of-people").value;
 
   billInput.value = bill.toFixed(2);
-//   console.log(bill, tipPercent, noOfPeople);
+
+  // Calculate output values
+
+  let totalTip = parseFloat((bill * (tipPercent / 100)).toFixed(2));
+
+  let total = parseFloat((bill + totalTip).toFixed(2));
+
+  let tipPerPerson = (totalTip / noOfPeople).toFixed(2);
+
+  let totalPerPerson = (total / noOfPeople).toFixed(2);
+
+  // Display output values
+
+  document.getElementById("tip-amount").textContent = `\$ ${totalTip}`;
+
+  document.getElementById("total-amount").textContent = `\$ ${total}`;
+
+  document.getElementById("tip-percent").textContent = `${tipPercent}%`;
+
+  document.getElementById("split-num").textContent = noOfPeople;
+
+  document.getElementById("tip-per-person").textContent = `\$ ${tipPerPerson}`;
+
+  document.getElementById(
+    "total-per-person"
+  ).textContent = `\$ ${totalPerPerson}`;
+
 }
+
+calculateTip();
