@@ -10,13 +10,8 @@ body {
   background-color: #f3f3f3;
   height: 100%;
   background: rgb(238, 174, 202);
-  
-  
-  background: linear-gradient(
-    135deg,
-    #6f6df4,
-    #4c4af4
-  ) fixed;
+
+  background: linear-gradient(135deg, #6f6df4, #4c4af4) fixed;
   /* background-color: #a8d0e6; */
   background-size: 100% 50%;
   background-repeat: no-repeat;
@@ -35,32 +30,32 @@ body {
   /* background: radial-gradient( circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); */
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 12px 0;
 }
 
-.lbl{
+.lbl {
   font-size: 16px;
   color: #44475b;
   font-weight: 400;
 }
 
-.val{
-  color: #44475b; 
+.val {
+  color: #44475b;
   font-weight: 600;
   font-size: 18px;
 }
 
-.input-box{
+.input-box {
   background-color: #cdccfd;
   color: #6f6df4;
   padding: 5px;
 }
 
-#bill{
+#bill {
   background-color: transparent;
   border: none;
   outline: none;
@@ -69,15 +64,36 @@ body {
   color: #6f6df4;
 }
 
-hr{
+hr {
   border: none;
   border-bottom: 1px solid #cdccfd;
 }
 
-input[type="range"]{
+input[type="range"] {
   width: 100%;
   cursor: pointer;
 }
 
+input[type="range"]:not(:last-child) {
+  margin-bottom: 5px;
+}
 
-/* input[] */
+section:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+section:not(:first-child) {
+  margin-top: 40px;
+}
+
+section:last-child {
+  background-color: #cdccfd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+section:last-child .val,
+section:last-child .lbl{
+  color: #4c4af4;
+  
+}
